@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f4">
+    <title>Node + PostgreSQL starter</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Starter home">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>Node / Postgres</span>
+        </a>
+        <span class="version-pill">Express 5 · Node 24</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="status-dot"></span> Server is ready</p>
+        <h1 id="page-title">A clean start<br>for your next idea.</h1>
+        <p class="intro">
+          Plain HTML, CSS, and JavaScript served by Express, with a live
+          PostgreSQL connection check.
+        </p>
+
+        <section class="check-card" aria-labelledby="check-title">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Database connection</p>
+              <h2 id="check-title">Send a test query</h2>
+            </div>
+            <span id="db-status" class="db-status" role="status">Not checked</span>
+          </div>
+
+          <form id="db-form">
+            <label for="message">Text to bind as a SQL parameter</label>
+            <div class="input-row">
+              <input
+                id="message"
+                name="message"
+                type="text"
+                maxlength="200"
+                value="Hello from the browser"
+                autocomplete="off"
+                required
+              >
+              <button type="submit">Check database <span aria-hidden="true">↗</span></button>
+            </div>
+          </form>
+
+          <pre id="result" class="result" aria-live="polite">The query result will appear here.</pre>
+        </section>
+      </section>
+
+      <footer>
+        <span>Static frontend</span>
+        <span>Express API</span>
+        <span>Replit PostgreSQL</span>
+      </footer>
+    </main>
+  </body>
+</html>
