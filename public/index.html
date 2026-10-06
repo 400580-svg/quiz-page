@@ -46,9 +46,36 @@
         </div>
       </section>
 
+      <section class="db-card" aria-labelledby="db-title">
+        <div class="db-card-heading">
+          <div>
+            <p class="eyebrow">Server check</p>
+            <h2 id="db-title">PostgreSQL connection</h2>
+          </div>
+          <span id="db-status" class="db-status" role="status">Not checked</span>
+        </div>
+        <p class="db-description">Send a value to the server and see it returned from a parameterized SQL query.</p>
+        <form id="db-form">
+          <label for="message">Test value</label>
+          <div class="input-row">
+            <input
+              id="message"
+              name="message"
+              type="text"
+              maxlength="200"
+              value="Hello from the browser"
+              autocomplete="off"
+              required
+            >
+            <button class="db-check-button" type="submit">Check database <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+        <pre id="db-result" class="db-result" aria-live="polite">The query result will appear here.</pre>
+      </section>
+
       <footer>
-        <span>Static frontend</span>
-        <span>Express API</span>
+        <span>Express 5 · Node 24</span>
+        <span>Replit PostgreSQL</span>
         <span>Made with Vibe</span>
       </footer>
     </main>
