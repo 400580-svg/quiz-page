@@ -117,52 +117,76 @@ function finish() {
   show(resultScreen);
 }
 
-startBtn.addEventListener("click", () => {
-  index = 0;
-  score = 0;
-  show(quizScreen);
-  renderQuestion();
-});
+const quizElements = [
+  startScreen,
+  quizScreen,
+  resultScreen,
+  startBtn,
+  nextBtn,
+  restartBtn,
+  questionText,
+  answersBox,
+  feedback,
+  progress,
+  scoreEl,
+  resultText,
+];
 
-nextBtn.addEventListener("click", () => {
-  index += 1;
-  if (index < questions.length) renderQuestion();
-  else finish();
-});
+if (quizElements.every(Boolean)) {
+  startBtn.addEventListener("click", () => {
+    index = 0;
+    score = 0;
+    show(quizScreen);
+    renderQuestion();
+  });
 
-restartBtn.addEventListener("click", () => {
-  index = 0;
-  score = 0;
-  show(quizScreen);
-  renderQuestion();
-});
+  nextBtn.addEventListener("click", () => {
+    index += 1;
+    if (index < questions.length) renderQuestion();
+    else finish();
+  });
+
+  restartBtn.addEventListener("click", () => {
+    index = 0;
+    score = 0;
+    show(quizScreen);
+    renderQuestion();
+  });
+} else {
+  console.error("Quiz controls are missing from the page; check index.html.");
+}
 
 const form = document.querySelector("#db-form");
 const messageField = document.querySelector("#message");
 const statusBadge = document.querySelector("#db-status");
-const resultPanel = document.querySelector("#db-result");
+const resultPanel =
+  document.querySelector("#db-result") || document.querySelector("#result");
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  statusBadge.textContent = "Checking…";
-  statusBadge.dataset.state = "";
-  resultPanel.textContent = "Connecting to PostgreSQL…";
+if (form && messageField && statusBadge && resultPanel) {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    statusBadge.textContent = "Checking…";
+    statusBadge.dataset.state = "";
+    resultPanel.textContent = "Connecting to PostgreSQL…";
 
-  try {
-    const query = new URLSearchParams({ message: messageField.value });
-    const response = await fetch(`/api/db-check?${query}`);
-    const result = await response.json();
+    try {
+      const query = new URLSearchParams({ message: messageField.value });
+      const response = await fetch(`/api/db-check?${query}`);
+      const result = await response.json();
 
-    if (!response.ok) {
-      throw new Error(result.error || "Database check failed.");
+      if (!response.ok) {
+        throw new Error(result.error || "Database check failed.");
+      }
+
+      statusBadge.textContent = "Connected";
+      statusBadge.dataset.state = "success";
+      resultPanel.textContent = JSON.stringify(result, null, 2);
+    } catch (error) {
+      statusBadge.textContent = "Unavailable";
+      statusBadge.dataset.state = "error";
+      resultPanel.textContent = error.message;
     }
-
-    statusBadge.textContent = "Connected";
-    statusBadge.dataset.state = "success";
-    resultPanel.textContent = JSON.stringify(result, null, 2);
-  } catch (error) {
-    statusBadge.textContent = "Unavailable";
-    statusBadge.dataset.state = "error";
-    resultPanel.textContent = error.message;
-  }
-});
+  });
+} else {
+  console.error("Database check controls are missing from the page; check index.html.");
+}
