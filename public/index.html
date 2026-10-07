@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f5f7f4">
-    <title>Node + PostgreSQL starter</title>
+    <title>Zaiden's Vibe Quiz</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/styles.css">
     <script src="/app.js" defer></script>
@@ -12,32 +12,50 @@
   <body>
     <main class="shell">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="Starter home">
-          <span class="brand-mark" aria-hidden="true">N</span>
-          <span>Node / Postgres</span>
+        <a class="brand" href="/" aria-label="Quiz home">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span>Zaiden's Vibe Quiz</span>
         </a>
         <span class="version-pill">Express 5 · Node 24</span>
       </header>
 
-      <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow"><span class="status-dot"></span> Server is ready</p>
-        <h1 id="page-title">A clean start<br>for your next idea.</h1>
-        <p class="intro">
-          Plain HTML, CSS, and JavaScript served by Express, with a live
-          PostgreSQL connection check.
-        </p>
+      <section class="hero" aria-labelledby="quiz-title">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Vibe Code Quiz</p>
+        <h1 id="quiz-title">Zaiden's Vibe Quiz</h1>
 
-        <section class="check-card" aria-labelledby="check-title">
+        <div id="start-screen">
+          <p class="intro">Six quick questions about Vibe, the coding agent by Mistral AI. How many can you get right?</p>
+          <button id="start-btn" class="btn-primary" type="button">Start the quiz →</button>
+        </div>
+
+        <div id="quiz-screen" hidden>
+          <div class="meta-row">
+            <span id="progress" class="progress">Question 1 of 6</span>
+            <span id="score" class="score">Score: 0</span>
+          </div>
+          <h2 id="question-text" class="question">Loading…</h2>
+          <div id="answers" class="answers"></div>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+          <button id="next-btn" class="btn-primary" type="button" hidden>Next question →</button>
+        </div>
+
+        <div id="result-screen" hidden>
+          <h2 id="result-title" class="question">Quiz complete!</h2>
+          <p id="result-text" class="intro"></p>
+          <button id="restart-btn" class="btn-primary" type="button">Play again ↺</button>
+        </div>
+
+        <section class="check-card" aria-labelledby="db-title">
           <div class="card-heading">
             <div>
-              <p class="eyebrow">Database connection</p>
-              <h2 id="check-title">Send a test query</h2>
+              <p class="eyebrow">Server check</p>
+              <h2 id="db-title">PostgreSQL connection</h2>
             </div>
             <span id="db-status" class="db-status" role="status">Not checked</span>
           </div>
-
+          <p class="db-description">Send a value to the server and see it returned from a parameterized SQL query.</p>
           <form id="db-form">
-            <label for="message">Text to bind as a SQL parameter</label>
+            <label for="message">Test value</label>
             <div class="input-row">
               <input
                 id="message"
@@ -48,19 +66,17 @@
                 autocomplete="off"
                 required
               >
-              <button type="submit">Check database <span aria-hidden="true">↗</span></button>
+              <button class="db-check-button" type="submit">Check database <span aria-hidden="true">↗</span></button>
             </div>
           </form>
-
-          <pre id="result" clas
-s="result" aria-live="polite">The query result will appear here.</pre>
+          <pre id="db-result" class="result" aria-live="polite">The query result will appear here.</pre>
         </section>
       </section>
 
       <footer>
-        <span>Static frontend</span>
-        <span>Express API</span>
+        <span>Express 5 · Node 24</span>
         <span>Replit PostgreSQL</span>
+        <span>Made with Vibe</span>
       </footer>
     </main>
   </body>
