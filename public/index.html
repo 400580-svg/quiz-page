@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NFL Quiz Central</title>
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <main class="card">
-    <h1>&#127944; NFL Quiz Central</h1>
-    <p>Phase 1 — accounts are open. Quizzes arrive in Phase 2.</p>
-    <a class="btn" href="/login.html">Log In</a>
-    <a class="btn btn-outline" href="/register.html">Register</a>
-  </main>
+<body class="auth-body">
+  <div class="auth-field">
+    <main class="auth-card">
+      <div class="auth-header">
+        <span class="auth-logo">&#127944;</span>
+        <h1 class="auth-title">NFL QUIZ CENTRAL</h1>
+        <p class="auth-tagline">TAKE THE FIELD</p>
+      </div>
+      <p style="text-align:center; color:var(--slate);">Football trivia, classroom quizzes, and mastery training.</p>
+      <div style="text-align:center; margin-top:1.5rem;">
+        <a class="btn btn-primary" style="margin-right:0.5rem;" href="/register.html">JOIN THE LEAGUE</a>
+        <a class="btn btn-outline" href="/login.html">LOG IN</a>
+      </div>
+    </main>
+  </div>
   <script src="/app.js"></script>
 </body>
 </html>

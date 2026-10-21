@@ -5,19 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register — NFL Quiz Central</title>
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <main class="card">
-    <h1>Register</h1>
-    <form id="register-form">
-      <label>Username<input name="username" required /></label>
-      <label>Email<input name="email" type="email" required /></label>
-      <label>Password (8+ characters)<input name="password" type="password" minlength="8" required /></label>
-      <label>Educator key (optional)<input name="teacherKey" placeholder="Leave blank for student account" /></label>
-      <button class="btn" type="submit">Create Account</button>
-      <p id="msg" class="msg"></p>
-    </form>
-  </main>
+<body class="auth-body">
+  <div class="auth-field">
+    <main class="auth-card">
+      <div class="auth-header">
+        <span class="auth-logo">&#127944;</span>
+        <h1 class="auth-title">NFL QUIZ CENTRAL</h1>
+        <p class="auth-tagline">JOIN THE LEAGUE</p>
+      </div>
+
+      <form id="register-form" class="auth-form">
+        <label class="auth-label">USERNAME
+          <input class="auth-input" name="username" placeholder="QB_Joe_16" autocomplete="username" required />
+        </label>
+        <label class="auth-label">EMAIL
+          <input class="auth-input" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+        </label>
+        <label class="auth-label">PASSWORD (8+ CHARACTERS)
+          <input class="auth-input" name="password" type="password" placeholder="••••••••" minlength="8" autocomplete="new-password" required />
+        </label>
+        <label class="auth-label">EDUCATOR KEY (OPTIONAL)
+          <input class="auth-input" name="teacherKey" placeholder="Have a teacher code? Enter it here" />
+        </label>
+        <button class="btn btn-primary btn-full" type="submit">CREATE ACCOUNT</button>
+        <p id="msg" class="msg"></p>
+      </form>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a class="auth-link" href="/login.html">LOG IN</a></p>
+        <a class="auth-link auth-link-subtle" href="/">Back to home</a>
+      </div>
+    </main>
+  </div>
   <script src="/app.js"></script>
 </body>
 </html>
