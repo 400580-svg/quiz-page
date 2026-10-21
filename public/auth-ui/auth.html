@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14100e">
+    <meta
+      name="description"
+      content="Sign in or create an account for Zaiden Quiz Site, the quick Vibe coding quiz."
+    >
+    <title>Sign in · Zaiden Quiz Site</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/auth-ui/auth.css">
+    <script src="/auth-ui/auth.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to sign in</a>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Zaiden Quiz Site home">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span>Zaiden Quiz Site</span>
+        </a>
+        <a class="home-link" href="/">Back to quiz <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main id="main-content" class="auth-layout">
+        <section class="intro-panel" aria-labelledby="page-title">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Vibe Code Quiz</p>
+          <h1 id="page-title">Your next<br>round starts here.</h1>
+          <p class="intro-copy">
+            Sign in to pick up where you left off, or make an account and see how well
+            you know Vibe.
+          </p>
+          <p class="side-note"><span aria-hidden="true">01</span> Six questions. One good challenge.</p>
+        </section>
+
+        <section class="auth-panel" aria-labelledby="auth-heading">
+          <div class="auth-panel-heading">
+            <p class="panel-kicker">Your account</p>
+            <h2 id="auth-heading">Welcome back</h2>
+            <p class="panel-copy">Choose how you’d like to continue.</p>
+          </div>
+
+          <nav class="auth-switch" aria-label="Account access">
+            <a id="sign-in-link" class="auth-switch-link is-current" href="/sign-in" aria-current="page">Sign in</a>
+            <a id="sign-up-link" class="auth-switch-link" href="/sign-up">Create account</a>
+          </nav>
+
+          <div id="clerk-widget" class="widget-slot" aria-label="Sign-in form">
+            <p id="widget-hint" class="widget-hint" role="status">Loading secure sign-in…</p>
+          </div>
+
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <span>Zaiden Quiz Site</span>
+        <span class="footer-divider" aria-hidden="true"></span>
+        <span>A quick quiz about Vibe by Mistral AI</span>
+      </footer>
+    </div>
+  </body>
+</html>

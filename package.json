@@ -16,7 +16,11 @@
     "node": ">=24 <25"
   },
   "dependencies": {
+    "@clerk/express": "^2.1.82",
+    "@clerk/shared": "^4.41.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
+    "http-proxy-middleware": "^4.2.0",
     "pg": "^8.23.1"
   }
 }
