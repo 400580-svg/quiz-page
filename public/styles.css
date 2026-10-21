@@ -1,12 +1,110 @@
-/* Functional placeholder styling only — Athletic Minimalist polish comes in Phase 5. */
-:root { --turf: #1B4D3E; --gold: #F5B041; --cream: #FAF9F6; --ink: #181A1B; --red: #E74C3C; }
+/* ============ Base (functional placeholders — full polish in Phase 5) ============ */
+:root {
+  --turf: #1B4D3E;      /* Primary Turf Green */
+  --gold: #F5B041;      /* Championship Gold */
+  --cream: #FAF9F6;     /* Stadium Cream */
+  --surface: #FFFFFF;   /* Surface White */
+  --ink: #181A1B;       /* Scoreboard Dark */
+  --slate: #7C7571;     /* Slate Gray */
+  --mint: #4EBA87;      /* Mint Green */
+  --red: #E74C3C;       /* Penalty Red */
+}
 * { box-sizing: border-box; }
-body { font-family: system-ui, sans-serif; background: var(--cream); color: var(--ink); margin: 0; display: grid; place-items: center; min-height: 100vh; }
-.card { background: #fff; padding: 2rem; border-radius: 8px; border: 2px solid #eee; width: min(420px, 92vw); }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); margin: 0; display: grid; place-items: center; min-height: 100vh; }
+.card { background: var(--surface); padding: 2rem; border-radius: 8px; border: 2px solid #eee; width: min(420px, 92vw); }
 h1 { color: var(--turf); }
 label { display: block; margin: 0.75rem 0; font-weight: 500; }
 input { display: block; width: 100%; padding: 0.6rem; margin-top: 0.25rem; border: 2px solid #ddd; border-radius: 6px; min-height: 48px; }
 input:focus { border-color: var(--gold); outline: none; }
 .btn { display: inline-block; margin-top: 0.5rem; padding: 0.75rem 1.5rem; min-height: 48px; background: var(--turf); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; text-decoration: none; }
-.btn-outline { background: #fff; color: var(--turf); border: 2px solid var(--turf); }
+.btn-outline { background: var(--surface); color: var(--turf); border: 2px solid var(--turf); }
 .msg { color: var(--red); min-height: 1.2em; }
+
+/* ============ Login page — Athletic Minimalist ============ */
+.auth-body {
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(27, 77, 62, 0.16), transparent 60%),
+    var(--cream);
+}
+.auth-field { width: 100%; min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+.auth-card {
+  background: var(--surface);
+  width: min(440px, 94vw);
+  padding: 2.5rem 2.25rem;
+  border-radius: 14px;
+  border: 2px solid #ECE9E4;
+  box-shadow: 0 12px 40px rgba(24, 26, 27, 0.10);
+  border-top: 6px solid var(--gold);
+}
+.auth-header { text-align: center; margin-bottom: 1.5rem; }
+.auth-logo { font-size: 2.4rem; display: block; margin-bottom: 0.4rem; }
+.auth-title {
+  font-family: 'Chakra Petch', 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--turf);
+  font-size: 1.45rem;
+  margin: 0;
+}
+.auth-tagline {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  margin: 0.35rem 0 0;
+}
+.auth-form { margin: 0; }
+.auth-label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--slate);
+  margin: 1rem 0 0;
+}
+.auth-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--cream);
+  border: 2px solid #E5E1DA;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-top: 0.35rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.auth-input::placeholder { color: #C9C3BC; }
+.auth-input:focus { border-color: var(--gold); background: var(--surface); outline: none; }
+.btn-primary {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  background: var(--turf);
+  color: #fff;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.95rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover { background: #15503E; }
+.btn-primary:active { transform: translateY(1px); }
+.btn-full { width: 100%; }
+.auth-footer { text-align: center; margin-top: 1.5rem; }
+.auth-footer p { margin: 0 0 0.5rem; font-size: 0.92rem; color: var(--slate); }
+.auth-link {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  color: var(--turf);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 1px;
+}
+.auth-link:hover { color: var(--gold); border-bottom-color: var(--turf); }
+.auth-link-subtle { border-bottom: none; color: var(--slate); font-size: 0.75rem; }
+.auth-link-subtle:hover { color: var(--turf); }

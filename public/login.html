@@ -5,18 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Log In — NFL Quiz Central</title>
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <main class="card">
-    <h1>Log In</h1>
-    <form id="login-form">
-      <label>Username or email<input name="username" required /></label>
-      <label>Password<input name="password" type="password" required /></label>
-      <button class="btn" type="submit">Log In</button>
-      <p id="msg" class="msg"></p>
-    </form>
-    <p>No account? <a href="/register.html">Register</a></p>
-  </main>
+<body class="auth-body">
+  <div class="auth-field">
+    <main class="auth-card">
+      <div class="auth-header">
+        <span class="auth-logo">&#127944;</span>
+        <h1 class="auth-title">NFL QUIZ CENTRAL</h1>
+        <p class="auth-tagline">TAKE THE FIELD</p>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <label class="auth-label">USERNAME OR EMAIL
+          <input class="auth-input" name="username" placeholder="QB_Joe_16" autocomplete="username" required />
+        </label>
+        <label class="auth-label">PASSWORD
+          <input class="auth-input" name="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
+        </label>
+        <button class="btn btn-primary btn-full" type="submit">LOG IN</button>
+        <p id="msg" class="msg"></p>
+      </form>
+
+      <div class="auth-footer">
+        <p>No account yet? <a class="auth-link" href="/register.html">JOIN THE LEAGUE</a></p>
+        <a class="auth-link auth-link-subtle" href="/">Back to home</a>
+      </div>
+    </main>
+  </div>
   <script src="/app.js"></script>
 </body>
 </html>
